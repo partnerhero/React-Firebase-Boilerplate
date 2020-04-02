@@ -1,6 +1,6 @@
 # React - Redux - Firebase - Serverless Boilerplate
 
-This is a project template for building modern, scalable React 
+This is a project template for building modern, scalable and affordable React 
 applications using serverless architecture of [Firebase](https://firebase.google.com/) ( Cloud Functions, Firebase Hosting )
 
 ---

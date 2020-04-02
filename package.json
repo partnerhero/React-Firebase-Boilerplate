@@ -12,8 +12,6 @@
     "@types/node": "^12.12.34",
     "@types/react": "^16.9.29",
     "@types/react-dom": "^16.9.5",
-    "@typescript-eslint/eslint-plugin": "^2.10.0",
-    "@typescript-eslint/parser": "^2.10.0",
     "babel-eslint": "10.1.0",
     "babel-jest": "^24.9.0",
     "babel-loader": "8.1.0",
@@ -30,7 +28,6 @@
     "eslint-plugin-flowtype": "4.6.0",
     "eslint-plugin-import": "2.20.1",
     "eslint-plugin-jsx-a11y": "6.2.3",
-    "eslint-plugin-react": "7.19.0",
     "eslint-plugin-react-hooks": "^1.6.1",
     "file-loader": "4.3.0",
     "fs-extra": "^8.1.0",
@@ -66,13 +63,22 @@
     "webpack-manifest-plugin": "2.2.0",
     "workbox-webpack-plugin": "4.3.1"
   },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.19.0",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.1.1",
+    "prettier": "^2.0.2"
+  },
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "test": "node scripts/test.js",
+    "lint": "eslint --ext .jsx,.js,.ts,.tsx 'src/'",
+    "lint-fix": "npm run lint -- --fix"
   },
   "browserslist": {
     "production": [
@@ -139,6 +145,19 @@
   "babel": {
     "presets": [
       "react-app"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.[jt]s": [
+      "npm run lint-fix"
+    ],
+    "**/*.[jt]sx": [
+      "npm run lint-fix"
     ]
   }
 }
