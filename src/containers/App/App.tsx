@@ -1,8 +1,20 @@
 import React from "react";
-import logo from "./logo.svg";
+import logo from "../../logo.svg";
 import "./App.css";
 
 const App: React.FC = () => {
+  React.useEffect(() => {
+    async function doSomethingAsync() {
+      const aPromise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve(true);
+        }, 1500);
+      });
+      await aPromise;
+      console.log("done!");
+    }
+    doSomethingAsync();
+  });
   return (
     <div className="App">
       <header className="App-header">
