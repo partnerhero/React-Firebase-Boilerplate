@@ -1,4 +1,4 @@
-import { Todo } from "./reducers";
+import { Todo } from "./reducer";
 
 export const ADD_TODO = "boilerplate/todos/ADD_TODO";
 export const REMOVE_TODO = "boilerplate/todos/REMOVE_TODO";

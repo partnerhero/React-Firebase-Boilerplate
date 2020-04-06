@@ -1,4 +1,4 @@
-import { Todo } from "./reducers";
+import { Todo } from "./reducer";
 import { ADD_TODO, REMOVE_TODO, TodoActionTypes } from "./types";
 
 export function addTodo(newTodo: Todo): TodoActionTypes {
