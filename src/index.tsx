@@ -5,13 +5,17 @@ import App from "./containers/App";
 import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
 import configureStore from "./store/configure";
+import { ThemeProvider } from "@material-ui/core/styles";
+import BoilerplateTheme from "./theme";
 
 export const store = configureStore();
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <ThemeProvider theme={BoilerplateTheme}>
+        <App />
+      </ThemeProvider>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")
